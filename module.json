@@ -1,0 +1,62 @@
+{
+  "id": "gum-animations",
+  "title": "GUM Animations",
+  "description": "Adaptador experimental de animações para o sistema GUM, usando os hooks públicos do sistema e o Sequencer.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Victor Valentim",
+      "url": "https://github.com/V3-code"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "gum",
+        "type": "system"
+      }
+    ],
+    "requires": [
+      {
+        "id": "sequencer",
+        "type": "module",
+        "manifest": "https://github.com/fantasycalendar/FoundryVTT-Sequencer/releases/latest/download/module.json"
+      }
+    ],
+    "recommends": [
+      {
+        "id": "JB2A_DnD5e",
+        "type": "module"
+      },
+      {
+        "id": "jb2a_patreon",
+        "type": "module"
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "license": "https://raw.githubusercontent.com/V3-code/GUM-Animations/main/LICENSE.md",
+  "url": "https://github.com/V3-code/GUM-Animations",
+  "manifest": "https://github.com/V3-code/GUM-Animations/releases/latest/download/module.json",
+  "download": "https://github.com/V3-code/GUM-Animations/releases/latest/download/gum-animations.zip",
+  "readme": "https://raw.githubusercontent.com/V3-code/GUM-Animations/main/README.md",
+  "bugs": "https://github.com/V3-code/GUM-Animations/issues"
+}
