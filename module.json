@@ -1,8 +1,8 @@
 {
   "id": "gum-animations",
   "title": "GUM Animations",
-  "description": "Adaptador experimental de animações para o sistema GUM, usando os hooks públicos do sistema e o Sequencer.",
-  "version": "0.2.0",
+  "description": "Hub extensível de integração entre os hooks públicos do GUM e módulos de animação do Foundry VTT.",
+  "version": "0.3.0",
   "authors": [
     {
       "name": "Victor Valentim",
@@ -20,19 +20,16 @@
         "type": "system"
       }
     ],
-    "requires": [
+    "recommends": [
       {
-        "id": "sequencer",
+        "id": "autoanimations",
         "type": "module",
-        "manifest": "https://github.com/fantasycalendar/FoundryVTT-Sequencer/releases/latest/download/module.json"
+        "manifest": "https://github.com/theripper93/autoanimations/releases/latest/download/module.json"
       }
     ]
   },
   "esmodules": [
     "scripts/main.mjs"
-  ],
-  "styles": [
-    "styles/mapping-config.css"
   ],
   "languages": [
     {
