@@ -33,6 +33,27 @@ export async function resolveConfig(context, eventType) {
   return resolveAnimationConfig({ context, eventType, getSetting });
 }
 
+export async function previewAnimation(config, source, target = null) {
+  if (!config?.path || !globalThis.Sequence) return false;
+  if (!databaseHasPath(config.path)) throw new Error(`Caminho não encontrado: ${config.path}`);
+  const resolvedSource = resolvePlaceable(source);
+  const resolvedTarget = resolvePlaceable(target);
+  const placement = config.placement || "auto";
+  const origin = placement === "target" ? (resolvedTarget || resolvedSource) : (resolvedSource || resolvedTarget);
+  if (!origin) throw new Error("Selecione um token de origem ou um alvo para visualizar a animação.");
+
+  const sequence = new globalThis.Sequence({ moduleName: MODULE_ID });
+  const effect = sequence.effect().file(config.path).atLocation(origin);
+  if (Number(config.scale) > 0 && Number(config.scale) !== 1) effect.scale(Number(config.scale));
+  const shouldStretch = resolvedSource && resolvedTarget && resolvedSource !== resolvedTarget
+    && (placement === "auto" || placement === "stretch");
+  if (shouldStretch) effect.stretchTo(resolvedTarget);
+  if (config.missed && shouldStretch && typeof effect.missed === "function") effect.missed(true);
+  if (config.persist && typeof effect.persist === "function") effect.persist();
+  await sequence.play();
+  return true;
+}
+
 export async function playLifecycleAnimation(context, eventType) {
   if (!getSetting("enabled") || !globalThis.Sequence) return false;
   const config = await resolveConfig(context, eventType);
@@ -50,12 +71,7 @@ export async function playLifecycleAnimation(context, eventType) {
     return false;
   }
 
-  const sequence = new globalThis.Sequence({ moduleName: MODULE_ID });
-  const effect = sequence.effect().file(config.path).atLocation(origin).scale(config.scale || 1);
-  if (target && target !== origin) effect.stretchTo(target);
-  if (config.missed && target && typeof effect.missed === "function") effect.missed(true);
-  if (config.persist && typeof effect.persist === "function") effect.persist();
-  await sequence.play();
+  await previewAnimation(config, source, target);
 
   if (getSetting("debug")) console.debug(`GUM Animations | ${eventType}`, { context, config });
   return true;

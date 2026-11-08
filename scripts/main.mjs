@@ -1,4 +1,4 @@
-import { EVENT_TYPES, MODULE_ID, REQUIRED_GUM_API_VERSION } from "./constants.mjs";
+import { EVENT_TYPES, MODULE_ID, MODULE_VERSION, REQUIRED_GUM_API_VERSION } from "./constants.mjs";
 import { playLifecycleAnimation, registerResolver } from "./player.mjs";
 import { compareVersions } from "./resolver.mjs";
 import { registerSettings } from "./settings.mjs";
@@ -39,7 +39,7 @@ function install(api) {
 
   const module = game.modules.get(MODULE_ID);
   if (module) module.api = Object.freeze({
-    version: "0.1.0",
+    version: MODULE_VERSION,
     play: playLifecycleAnimation,
     registerResolver,
     eventTypes: EVENT_TYPES

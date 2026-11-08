@@ -11,15 +11,24 @@ O módulo escuta os hooks públicos do GUM e traduz eventos semânticos em sequ�
 - Sequencer;
 - uma biblioteca registrada no Sequencer Database, como JB2A Free ou Patreon.
 
-## Estado da versão 0.1.0
+## Estado da versão 0.2.0
 
-- rolagens animadas por padrão com `jb2a.fire_bolt.orange`;
+- rolagens, dano, efeitos, condições e uso de Item disponíveis como eventos de mapeamento;
 - falhas usam o recurso `missed` do Sequencer quando existe alvo;
 - rotas opcionais para dano, estado de efeito, condição, grupo de estado e uso de item;
 - caminhos configuráveis nas configurações do módulo;
 - configuração por Item e API extensível para futuros presets.
+- editor de regras ordenadas por evento, resultado, Item, tipo, ação e ataque;
+- pré-visualização no mapa usando o token controlado e o primeiro alvo;
+- sugestões de caminhos por namespace, sem limitar o módulo ao JB2A.
 
-As famílias além de rolagem começam desligadas para evitar animações duplicadas enquanto o mundo ainda não possui mapeamentos específicos.
+As animações genéricas começam desligadas. Regras específicas são criadas no editor, evitando efeitos inesperados ou dependência implícita de uma biblioteca.
+
+Regras explícitas criadas no editor funcionam mesmo quando a animação genérica daquela família está desligada. A primeira regra compatível vence.
+
+## Biblioteca de animações
+
+JB2A não é uma dependência obrigatória. O GUM Animations requer o Sequencer como executor, mas aceita qualquer caminho válido registrado no Sequencer Database e arquivos fornecidos por outras bibliotecas. Os namespaces usados nas sugestões podem ser alterados nas configurações do módulo.
 
 ## Configuração por Item
 

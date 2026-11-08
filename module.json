@@ -2,7 +2,7 @@
   "id": "gum-animations",
   "title": "GUM Animations",
   "description": "Adaptador experimental de animações para o sistema GUM, usando os hooks públicos do sistema e o Sequencer.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "authors": [
     {
       "name": "Victor Valentim",
@@ -26,20 +26,13 @@
         "type": "module",
         "manifest": "https://github.com/fantasycalendar/FoundryVTT-Sequencer/releases/latest/download/module.json"
       }
-    ],
-    "recommends": [
-      {
-        "id": "JB2A_DnD5e",
-        "type": "module"
-      },
-      {
-        "id": "jb2a_patreon",
-        "type": "module"
-      }
     ]
   },
   "esmodules": [
     "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/mapping-config.css"
   ],
   "languages": [
     {
