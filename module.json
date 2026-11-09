@@ -2,7 +2,7 @@
   "id": "gum-animations",
   "title": "GUM Animations",
   "description": "Hub extensível de integração entre os hooks públicos do GUM e módulos de animação do Foundry VTT.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "authors": [
     {
       "name": "Victor Valentim",

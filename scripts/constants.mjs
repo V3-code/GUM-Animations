@@ -1,6 +1,6 @@
 export const MODULE_ID = "gum-animations";
-export const REQUIRED_GUM_API_VERSION = "1.2.0";
-export const MODULE_VERSION = "0.3.0";
+export const REQUIRED_GUM_API_VERSION = "1.3.0";
+export const MODULE_VERSION = "0.4.0";
 
 export const EVENT_TYPES = Object.freeze({
   ROLL: "roll",

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0] - 2026-11-08
+
+- Controle **A-A Efeito persistente** nos Itens Efeito do GUM.
+- Configuração aberta diretamente sobre a ponte ActiveEffect pública do sistema.
+- Ciclo visual persistente delegado ao suporte nativo do Automated Animations para criar, ligar, desligar e remover ActiveEffects.
+- Requisito atualizado para a API pública `1.3.0` do GUM.
+
 ## [0.3.0] - 2026-11-08
 
 - GUM Animations transformado em hub extensível de adaptadores.

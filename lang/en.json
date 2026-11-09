@@ -5,5 +5,9 @@
   "GUMAnimations.Settings.playOnFailure.Hint": "Allows failed rolls to reach the visual adapter, which may render them as misses.",
   "GUMAnimations.Settings.debug.Name": "Console diagnostics",
   "GUMAnimations.Settings.debug.Hint": "Logs which adapter handled each event and the received contexts.",
-  "GUMAnimations.Errors.IncompatibleApi": "GUM Animations requires GUM public API {version} or newer."
+  "GUMAnimations.Errors.IncompatibleApi": "GUM Animations requires GUM public API {version} or newer.",
+  "GUMAnimations.Controls.PersistentEffect": "A-A Persistent Effect",
+  "GUMAnimations.Errors.EffectBridgeUnavailable": "This Effect Item's ActiveEffect bridge is unavailable.",
+  "GUMAnimations.Errors.AutomatedAnimationsUnavailable": "Automated Animations is unavailable.",
+  "GUMAnimations.Errors.EffectAnimationOpenFailed": "The persistent effect configuration could not be opened in A-A."
 }

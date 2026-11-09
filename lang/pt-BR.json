@@ -5,5 +5,9 @@
   "GUMAnimations.Settings.playOnFailure.Hint": "Permite enviar falhas ao adaptador visual, que pode reproduzi-las como erro do alvo.",
   "GUMAnimations.Settings.debug.Name": "Diagnóstico no console",
   "GUMAnimations.Settings.debug.Hint": "Registra qual adaptador tratou cada evento e os contextos recebidos.",
-  "GUMAnimations.Errors.IncompatibleApi": "GUM Animations requer a API pública do GUM {version} ou mais recente."
+  "GUMAnimations.Errors.IncompatibleApi": "GUM Animations requer a API pública do GUM {version} ou mais recente.",
+  "GUMAnimations.Controls.PersistentEffect": "A-A Efeito persistente",
+  "GUMAnimations.Errors.EffectBridgeUnavailable": "A ponte ActiveEffect deste Item Efeito não está disponível.",
+  "GUMAnimations.Errors.AutomatedAnimationsUnavailable": "Automated Animations não está disponível.",
+  "GUMAnimations.Errors.EffectAnimationOpenFailed": "Não foi possível abrir a configuração persistente do efeito no A-A."
 }
