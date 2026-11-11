@@ -7,7 +7,7 @@ O GUM publica eventos semânticos. O GUM Animations encaminha cada evento ao pri
 ## Requisitos
 
 - Foundry VTT 13 ou 14;
-- GUM com API pública `1.2.0` ou mais recente.
+- GUM com API pública `1.3.0` ou mais recente.
 
 O núcleo não exige Sequencer, JB2A ou Automated Animations. Cada adaptador declara e detecta suas próprias dependências. A primeira integração incluída é com Automated Animations, que usa Sequencer e suas bibliotecas de recursos normalmente.
 
@@ -26,6 +26,12 @@ AutomatedAnimations.playAnimation(sourceToken, item, {
 Assim, a configuração visual continua no botão **A-A** do próprio Item. O GUM Animations apenas fornece o Item usado, o token de origem, os alvos e o resultado da rolagem.
 
 Ativações normais de Item não são processadas duas vezes: `itemUse` com gatilho `activate` é ignorado porque a rolagem concluída já representa esse fluxo. Consumos sem rolagem usam o gatilho `consume`.
+
+### Efeitos persistentes
+
+Itens Efeito do GUM exibem um controle adicional **A-A Efeito persistente**. Ele abre no A-A a ponte ActiveEffect nativa do Item Efeito, em vez de configurar a animação de uso do Item.
+
+A configuração permanece armazenada nessa ponte e é propagada pelo GUM ao único ActiveEffect marcado como portador visual. Assim, criar ou ligar o efeito inicia a animação persistente; desligar ou remover o efeito permite que o ciclo nativo do A-A a encerre. Aplicações vindas de Itens, Regiões, Escudo do Mestre ou API usam o mesmo caminho sem animar cada ação mecânica irmã.
 
 ## API de adaptadores
 
@@ -67,7 +73,7 @@ api.presets.register({
 
 A interface para escolher e atualizar provedores será uma etapa posterior. O contrato já separa o hub dos pacotes de conteúdo e permite que outros módulos forneçam presets.
 
-## Estado da versão 0.3.0
+## Estado da versão 0.4.0
 
 - hub ordenado e extensível de adaptadores;
 - adaptador inicial para Automated Animations;
@@ -76,6 +82,7 @@ A interface para escolher e atualizar provedores será uma etapa posterior. O co
 - registro público de provedores de presets;
 - editor de mapeamentos próprio removido em favor da configuração A-A do Item;
 - nenhuma dependência visual obrigatória no núcleo.
+- configuração específica de animações persistentes dos Itens Efeito pela ponte ActiveEffect do GUM.
 
 ## Desenvolvimento
 

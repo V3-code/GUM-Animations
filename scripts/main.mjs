@@ -4,6 +4,7 @@ import { EVENT_TYPES, MODULE_ID, MODULE_VERSION, REQUIRED_GUM_API_VERSION } from
 import { AnimationPresetRegistry } from "./preset-registry.mjs";
 import { compareVersions } from "./resolver.mjs";
 import { registerSettings } from "./settings.mjs";
+import { registerEffectAnimationControls } from "./integrations/effect-animation-controls.mjs";
 
 const processedEvents = new Set();
 const adapters = new AnimationAdapterRegistry();
@@ -80,7 +81,10 @@ function install(gumApi) {
   return true;
 }
 
-Hooks.once("init", registerSettings);
+Hooks.once("init", () => {
+  registerSettings();
+  registerEffectAnimationControls();
+});
 Hooks.once("ready", () => {
   const gumApi = game.gum?.api;
   if (gumApi) install(gumApi);
